@@ -1,0 +1,28 @@
+.tabs {
+  &__panel {
+    flexy(flex-start, stretch);
+
+    .tab {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.tab {
+  color: $marine;
+  background: rgba($pink-pig, 0.42);
+  flexy(center, center);
+  padding: vmin(13);
+
+  &.active {
+    background: transparent;
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

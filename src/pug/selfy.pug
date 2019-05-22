@@ -1,0 +1,16 @@
+extends template
+
+prepend page
+  - var layout = 'clear';
+  - var currentPage = 'selfy';
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  .page(class="page--" + currentPage)
+    .page-content
+      .selfy
+        .selfy__area
+        .selfy__logo
+          +icon('logo-selfy').icon--block

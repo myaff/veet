@@ -1,0 +1,35 @@
+.products {
+  padding: vmin(20) 0;
+}
+
+.product {
+  flexy(flex-start, flex-start);
+
+  & + & {
+    margin-top: vmin(35);
+  }
+
+  &__img {
+    flex: 0 0 vmin(100);
+    margin-right: vmin(12);
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    .product {
+      &__img {
+        margin-right: 0;
+        margin-left: vmin(12); 
+      }
+      &__info {
+        text-align: right;
+      }
+    }
+  }
+}

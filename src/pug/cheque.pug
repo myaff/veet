@@ -1,0 +1,39 @@
+extends template
+
+prepend page
+  - var layout = 'simple';
+  - var currentPage = 'cheque';
+  - var headerTitle = pages.cheque.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-content
+      .add-cheque
+        .add-cheque-header
+          .l-container
+            .add-cheque__heading
+              .tp-heading--bb !{page.heading}
+              .add-cheque-btn
+                button.btn.btn--circle
+                  +icon('camera')
+            .add-cheque__subheading.tp-heading--sr !{page.subheading}
+            .add-cheque__desc
+              p.tp-body--base !{page.desc}
+        .cheques-list
+          .cheques-list__header
+            .tp-heading--sb !{page.list.title}
+          .cheques-list__content
+            .l-container
+              .cheques-list__ls
+                each item in page.list.ls
+                  .cheques-list__item.cheque
+                    .cheque__info.tp-body--medium-b
+                      .cheque__title !{item.title}
+                      .cheque__date !{item.date}
+                    .cheque__state.tp-body--medium
+                      .cheque__state-title !{item.state.title}
+                      .cheque__state-val !{item.state.val}

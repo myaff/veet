@@ -1,0 +1,58 @@
+extends template
+
+prepend page
+	- var layout = 'simple';
+	- var currentPage = 'profile';
+	- var headerTitle = pages.profile.title;
+	- var pageTitle = false;
+	- var pageDesc = false;
+	- var pageImg = false;
+
+block content
+	.page(class="page--" + currentPage)
+		.page-bg
+		.page-content
+			.profile
+				.profile-header
+					+pic('heart').heart
+					.l-container
+						.profile-header__name !{profile.name}
+						.profile-header__id.tp-body--medium !{'#' + profile.id}
+						.profile-header__circle
+							.profile-header__info
+								.profile-header__steps !{profile.steps.val}
+								.profile-header__km !{profile.km.val + profile.km.e}
+						.profile-header__actions
+							button.btn.btn--square.btn-camera
+								+icon('camera')
+							button.btn.btn--square.btn-share
+								+icon('share')
+				.profile-stats
+					.profile-stats__weekly
+						.l-container
+							.profile-stats__weekly-inner.tp-body--smaller
+								.profile-stats__title !{profile.weekly.title}
+								.profile-stats__total !{profile.weekly.total}
+					.profile-stats__graph.graph(data-stats=profile.weekly.stats)
+					.profile-stats__list
+						.l-container
+							.profile-stats__list-inner
+								.profile-stats__item.scores
+									.profile-stats__item-val !{profile.scores.val}
+									.profile-stats__item-title !{profile.scores.title}
+								.profile-stats__item.steps
+									.profile-stats__item-val !{profile.steps.val}
+									.profile-stats__item-title !{profile.steps.title}
+								.profile-stats__item.km
+									.profile-stats__item-val !{profile.km.val}
+									.profile-stats__item-title !{profile.km.title}
+								.profile-stats__item.purchases
+									.profile-stats__item-val !{profile.purchases.val}
+									.profile-stats__item-title !{profile.purchases.title}
+								.profile-stats__item.friends
+									.profile-stats__item-val !{profile.friends.val}
+									.profile-stats__item-title !{profile.friends.title}
+				.profile-footer
+					.l-container
+						a.btn.btn--primary-outline.btn--block(href=pages.profile.btn.url) !{pages.profile.btn.title}
+

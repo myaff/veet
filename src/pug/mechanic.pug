@@ -1,0 +1,19 @@
+extends template
+
+prepend page
+  //- to add header set layout = 'default'
+  - var layout = 'clear';
+  - var currentPage = 'mechanic';
+  - var headerTitle = pages.mechanic.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-content
+      .mechanic
+        .l-container
+          .mechanic__heading.tp-body--medium-b !{page.title}
+          +carousel([0,1,2,3]).swiper--default.mechanic__carousel

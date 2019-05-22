@@ -1,0 +1,50 @@
+.scores {
+  &__item {
+
+    & + & {
+      margin-top: vmin(30);
+    }
+  }
+
+  &__header {
+    flexy(space-between, baseline);
+    margin-bottom: vmin(12);
+  }
+}
+
+.profile-scores {
+  &__header {
+    text-align: center;
+    color: $marina;
+  }
+  &__img {
+    circle(vmin(114));
+    box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+    margin: 0 auto;
+
+    img {
+      display: block;
+      max-size(100%);
+    }
+  }
+  &__name {
+    margin-top: vmin(11);
+  }
+
+  &__list {
+    margin-top: vmin(32);
+  }
+
+  &__item {
+    flexy(space-between, baseline);
+
+    & + & {
+      margin-top: vmin(11);
+    }
+  }
+
+  &__total {
+    flexy(flex-end, baseline);
+    margin-top: vmin(30);
+  }
+}

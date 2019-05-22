@@ -1,0 +1,34 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'friends';
+  - var headerTitle = pages.friends.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .bage-bg
+      +pic('heart-2').heart-2
+      +pic('heart-3').heart-3
+    .page-content
+      .add-friends
+        button.btn.btn--square.btn--small
+          +icon('plus')
+      .filter
+        +fieldSearch('friend-search', page.filter.placeholder)
+      .users
+        each item in users
+          .users__item
+            .users__circle
+              if item.img
+                img(src=item.img, alt=item.name)
+              else
+                .name !{item.name}
+            .users__name.tp-body--big !{item.name}
+            .users__scores
+              .tp-body--big !{item.scores.val}
+              .tp-body--medium !{item.scores.title}

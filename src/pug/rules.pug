@@ -1,0 +1,18 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'rules';
+  - var headerTitle = pages.rules.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-content
+      .l-container
+        each item in page.content
+          if item.type === 'text'
+            p.tp-body--base !{item.val}

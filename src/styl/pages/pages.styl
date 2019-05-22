@@ -1,0 +1,146 @@
+.page {
+  flex-grow: 1;
+  width: 100%;
+  opacity: 1;
+  padding-top: vmin(43);
+  transition: filter 0.3s;
+
+  .menu-is-open &,
+  .popup-is-open & {
+    filter: blur(vmin(5));
+  }
+
+  .layout--simple &,
+  .layout--clear & {
+    padding-top: 0;
+  }
+}
+
+.page-bg {
+  absolute(0px, 0px);
+  size(100%, 100vh);
+  overflow: hidden;
+}
+
+.page-content {
+  .layout--default & {
+    padding: vmin(24) vmin(18);
+    color: $marine;
+  }
+}
+
+.page--profile {
+  color: $white;
+
+  .heart {
+    absolute(vmin(96), vmin(24));
+  }
+}
+.page--signin {
+  color: $white;
+  .city {
+    absolute();
+    right: 0;
+    bottom: vmin(146);
+    width: 100%;
+  }
+  .cloud-big {
+    absolute(vmin(16));
+    right: vmin(16);
+  }
+  .cloud-small {
+    absolute(vmin(220), vmin(10));
+  }
+  .bird {
+    absolute(vmin(240), vmin(156));
+  }
+  .heart {
+    absolute(vmin(28), vmin(28));
+  }
+  .logo {
+    size(vmin(290), vmin(110));
+    absolute(vmin(116), vmin(45));
+  }
+
+  .page-content {
+    size(100%, 100vh);
+    flexy(center, flex-end);
+    padding: vmin(44) 0;
+  }
+
+}
+
+.page--profileScores {
+  .bird {
+    fixed(0, vmin(30), vmin(30));
+    transform: scaleX(-1);
+    width: vmin(200);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.page--rating,
+.page--friends {
+  .page-content {
+    padding: 0;
+  }
+}
+
+.page--friends {
+  .heart-2 {
+    fixed(0, 0, vmin(80), vmin(50));
+  }
+  .heart-3 {
+    fixed(0, 0, vmin(22), vmin(98));
+  }
+  .add-friends {
+    absolute(vmin(-42));
+    right: vmin(8);
+    z-index: 99;
+    color: $white;
+  }
+}
+
+.page--winners {
+  .bird {
+    fixed(0, vmin(60), vmin(18));
+    size(vmin(250), vmin(125));
+
+    img {
+      size(100%, auto);
+    }
+  }
+}
+
+.page--products,
+.page--buy {
+  .heart-4 {
+    fixed(0, 0, vmin(20), vmin(36));
+  }
+}
+
+.page--buy {
+  flexy(center, center);
+
+  .page-content {
+    width: 100%;
+  }
+  
+  .buy {
+    &__btn + .buy__btn {
+      margin-top: vmin(20);
+    }
+  }
+}
+
+.page--mechanic {
+  background: linear-gradient(to bottom, $white, $pink-vlight, $pink-baby);
+  color: $marine;
+
+  .page-content {
+    padding: 0;
+  }
+}

@@ -1,0 +1,49 @@
+.users {
+  padding: vmin(12) 0;
+  color: $marine;
+  &__item {
+    flexy(flex-start, center);
+    padding: vmin(11) vmin(15) vmin(13) vmin(17);
+
+    {active} {
+      background: rgba($pink-pig, 0.23);
+      box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+    }
+  }
+  &__circle {
+    flex: 0 0 vmin(81);
+    circle(vmin(81));
+    background: $pink-soft;
+    box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+    flexy(center, center);
+    font: 300 vmin(65)/1 $font-base;
+
+    &.size--3 {
+      font-size: vmin(50);
+    }
+    &.size--4 {
+      font-size: vmin(35);
+    }
+    .name {
+      font-size: 0;
+      color: $white;
+      &:first-letter {
+        font-size: vmin(75);
+      }
+    }
+
+    img {
+      display block;
+      max-size(100%);
+    }
+  }
+  &__scores {
+    flex: 0 0 vmin(82);
+    text-align: center;
+  }
+  &__name {
+    flex: 1 1 auto;
+    align-self: flex-start;
+    padding: vmin(8);
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Veet</title>
+    <meta property="og:title" content="Veet">
+    <meta property="og:image" content="OG Image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="build/js/vendor/jquery.ba-throttle-debounce.js"></script>
+    <script src="build/img/svg/sprite.js"></script>
+  </head>
+  <body>
+    <div class="svg-sprite"></div>
+    <script>$('.svg-sprite').html(SVG_SPRITE);</script>
+    <div class="layout layout--simple">
+      <div class="header">
+        <div class="l-container">
+          <div class="header__content">
+            <div class="header__burger btn-menu">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="header__title">Профиль</div>
+          </div>
+        </div>
+      </div>
+      <div class="aside main-menu">
+        <div class="aside__inner">
+          <div class="aside__profile mini-profile">
+                  <div class="pic crown"><img srcset="build/img/crown.png, build/img/crown@2x.png 2x, build/img/crown@3x.png 3x" src="build/img/crown.png"></div>
+                  <div class="pic heart-2"><img srcset="build/img/heart-2.png, build/img/heart-2@2x.png 2x, build/img/heart-2@3x.png 3x" src="build/img/heart-2.png"></div>
+                  <div class="pic heart-3"><img srcset="build/img/heart-3.png, build/img/heart-3@2x.png 2x, build/img/heart-3@3x.png 3x" src="build/img/heart-3.png"></div>
+            <div class="mini-profile__content">
+              <div class="mini-profile__img"><img src="build/img/demo/ava.png" alt="Аня"></div>
+              <div class="mini-profile__name tp-heading--bb">Аня</div>
+            </div>
+          </div>
+          <div class="aside__nav">
+                  <nav class="nav">
+                    <ul class="nav__list">
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="index.html">Главная</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="cheque.html">Загрузить чек</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="mechanic.html">Механика акции</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="friends.html">Мои друзья</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="rating.html">Рейтинг</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="products.html">Продукция Veet</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b disabled" href="#">Инстаграм Veet</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="winners.html">Победители</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="rules.html">Правила акции</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="profile-scores.html">Количество баллов</a></li>
+                      <li class="nav__item"><a class="nav__link tp-body--base-b" href="buy.html">Купить</a></li>
+                    </ul>
+                  </nav>
+          </div>
+        </div>
+      </div>
+      <div class="page page--profile">
+        <div class="page-bg"></div>
+        <div class="page-content">
+          <div class="profile">
+            <div class="profile-header">
+                    <div class="pic heart"><img srcset="build/img/heart.png, build/img/heart@2x.png 2x, build/img/heart@3x.png 3x" src="build/img/heart.png"></div>
+              <div class="l-container">
+                <div class="profile-header__name">Аня</div>
+                <div class="profile-header__id tp-body--medium">#1234</div>
+                <div class="profile-header__circle">
+                  <div class="profile-header__info">
+                    <div class="profile-header__steps">4794</div>
+                    <div class="profile-header__km">3.5км</div>
+                  </div>
+                </div>
+                <div class="profile-header__actions">
+                  <button class="btn btn--square btn-camera">
+                          <svg class="icon">
+                            <use xlink:href="#camera"></use>
+                          </svg>
+                  </button>
+                  <button class="btn btn--square btn-share">
+                          <svg class="icon">
+                            <use xlink:href="#share"></use>
+                          </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="profile-stats">
+              <div class="profile-stats__weekly">
+                <div class="l-container">
+                  <div class="profile-stats__weekly-inner tp-body--smaller">
+                    <div class="profile-stats__title">Статистика за&nbsp;неделю</div>
+                    <div class="profile-stats__total">10000</div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-stats__graph graph" data-stats="[{&quot;date&quot;:&quot;2019-05-13&quot;,&quot;val&quot;:1000},{&quot;date&quot;:&quot;2019-05-14&quot;,&quot;val&quot;:2548},{&quot;date&quot;:&quot;2019-05-15&quot;,&quot;val&quot;:1200},{&quot;date&quot;:&quot;2019-05-16&quot;,&quot;val&quot;:4900},{&quot;date&quot;:&quot;2019-05-17&quot;,&quot;val&quot;:5600},{&quot;date&quot;:&quot;2019-05-18&quot;,&quot;val&quot;:4600},{&quot;date&quot;:&quot;2019-05-19&quot;,&quot;val&quot;:3480},{&quot;date&quot;:&quot;2019-05-20&quot;,&quot;val&quot;:2100},{&quot;date&quot;:&quot;2019-05-21&quot;,&quot;val&quot;:200}]"></div>
+              <div class="profile-stats__list">
+                <div class="l-container">
+                  <div class="profile-stats__list-inner">
+                    <div class="profile-stats__item scores">
+                      <div class="profile-stats__item-val">3800</div>
+                      <div class="profile-stats__item-title">Баллы</div>
+                    </div>
+                    <div class="profile-stats__item steps">
+                      <div class="profile-stats__item-val">4794</div>
+                      <div class="profile-stats__item-title">Шаги</div>
+                    </div>
+                    <div class="profile-stats__item km">
+                      <div class="profile-stats__item-val">3.5</div>
+                      <div class="profile-stats__item-title">Километры</div>
+                    </div>
+                    <div class="profile-stats__item purchases">
+                      <div class="profile-stats__item-val">10</div>
+                      <div class="profile-stats__item-title">Покупки</div>
+                    </div>
+                    <div class="profile-stats__item friends">
+                      <div class="profile-stats__item-val">3</div>
+                      <div class="profile-stats__item-title">Друзья</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="profile-footer">
+              <div class="l-container"><a class="btn btn--primary-outline btn--block" href="scores.html">Получить больше баллов</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/js/vendor/jquery.touchSwipe.min.js"></script>
+    <script src="build/js/vendor/moment.min.js"></script>
+    <script src="build/js/vendor/swiper.min.js"></script>
+    <script src="build/js/main.js"></script>
+  </body>
+</html>

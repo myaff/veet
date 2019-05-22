@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Veet</title>
+    <meta property="og:title" content="Veet">
+    <meta property="og:image" content="OG Image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="build/js/vendor/jquery.ba-throttle-debounce.js"></script>
+    <script src="build/img/svg/sprite.js"></script>
+  </head>
+  <body>
+    <div class="svg-sprite"></div>
+    <script>$('.svg-sprite').html(SVG_SPRITE);</script>
+    <div class="layout layout--clear">
+      <div class="page page--signin">
+        <div class="page-bg">
+          <div class="pic city"><img srcset="build/img/city.png, build/img/city@2x.png 2x, build/img/city@3x.png 3x" src="build/img/city.png"/></div>
+          <div class="pic cloud-big"><img srcset="build/img/cloud.png, build/img/cloud@2x.png 2x, build/img/cloud@3x.png 3x" src="build/img/cloud.png"/></div>
+          <div class="pic cloud-small"><img srcset="build/img/cloud-small.png, build/img/cloud-small@2x.png 2x, build/img/cloud-small@3x.png 3x" src="build/img/cloud-small.png"/></div>
+          <div class="pic bird"><img srcset="build/img/bird.png, build/img/bird@2x.png 2x, build/img/bird@3x.png 3x" src="build/img/bird.png"/></div>
+          <div class="pic heart"><img srcset="build/img/heart.png, build/img/heart@2x.png 2x, build/img/heart@3x.png 3x" src="build/img/heart.png"/></div>
+          <div class="logo">
+            <svg class="icon icon--block">
+              <use xlink:href="#logo"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="l-container">
+            <button class="btn btn--white-outline btn--block entry-btn">Войти</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/js/vendor/jquery.touchSwipe.min.js"></script>
+    <script src="build/js/vendor/moment.min.js"></script>
+    <script src="build/js/vendor/swiper.min.js"></script>
+    <script src="build/js/main.js"></script>
+  </body>
+</html>

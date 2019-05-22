@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Veet</title>
+    <meta property="og:title" content="Veet">
+    <meta property="og:image" content="OG Image">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
+    <link href="build/css/main.css" rel="stylesheet">
+    <script src="build/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="build/js/vendor/jquery.ba-throttle-debounce.js"></script>
+    <script src="build/img/svg/sprite.js"></script>
+  </head>
+  <body>
+    <div class="svg-sprite"></div>
+    <script>$('.svg-sprite').html(SVG_SPRITE);</script>
+    <div class="layout layout--clear">
+      <div class="page page--selfy">
+        <div class="page-content">
+          <div class="selfy">
+            <div class="selfy__area"></div>
+            <div class="selfy__logo">
+              <svg class="icon icon--block">
+                <use xlink:href="#logo-selfy"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="build/js/vendor/jquery.touchSwipe.min.js"></script>
+    <script src="build/js/vendor/moment.min.js"></script>
+    <script src="build/js/vendor/swiper.min.js"></script>
+    <script src="build/js/main.js"></script>
+  </body>
+</html>

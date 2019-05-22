@@ -1,0 +1,52 @@
+.aside {
+  fixed(0px, -100%);
+  z-index: 10;
+  size(vmin(303), 100vh);
+  background: $white;
+  overflow: hidden;
+  box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+
+  .crown {
+    absolute(vmin(9), vmin(67));
+  }
+  .heart-2 {
+    absolute(vmin(38), vmin(240));
+  }
+  .heart-3 {
+    absolute(vmin(105), vmin(180));
+  }
+
+  &__inner {
+    size(100%);
+    overflow: auto;
+  }
+
+  &__profile {
+    background: linear-gradient(50deg, $pink 10%, $white);
+    color: $white;
+    box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+  }
+
+  &__nav {
+    padding: vmin(30) vmin(36) vmin(55);
+  }
+}
+
+.mini-profile {
+  &__content {
+    padding: vmin(54) vmin(36) vmin(40);
+  }
+  &__img {
+    circle(vmin(114));
+    box-shadow: 0 vmin(3) vmin(6) rgba($black, 0.16);
+
+    img {
+      display: block;
+      max-size(100%);
+    }
+  }
+
+  &__name {
+    margin-top: vmin(14);
+  }
+}

@@ -1,0 +1,18 @@
+// Mixin for filled button variants
+get-button-variant($color, $color-active = darken($color, 20%))
+  background: $color;
+  color: white;
+  
+  {focus-active}
+    background: $color-active;
+    color: white;
+
+// Mixin for outlined button variants
+get-button-outline-variant($color, $color-active = darken($color, 20%))
+  color: $color;
+  border-color: $color;
+  
+  {focus-active}
+    background: $color-active;
+    border-color: $color;
+    color: white;

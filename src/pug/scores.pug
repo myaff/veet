@@ -1,0 +1,23 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'scores';
+  - var headerTitle = pages.scores.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-content
+      .l-container
+        .scores
+          each item in page.content
+            .scores__item
+              .scores__header.tp-body--medium-b
+                .scores__title !{item.title}
+                .scores__val !{item.scores}
+              .scores__desc
+                p.tp-body--base !{item.desc}

@@ -1,0 +1,28 @@
+.graph {
+  flexy(space-between, flex-end);
+  border-top: vmin(2) solid $pink;
+  border-bottom: vmin(18) solid $pink;
+  height: vmin(130);
+
+  &-item {
+    flex: 1 1 auto;
+    flexy(center, flex-end);
+    background: $pink-pig;
+    color: $white;
+    text-align center;
+    overflow: hidden;
+
+    &.full {
+      background: $pink;
+    }
+
+    & + & {
+      margin-left: vmin(2);
+    }
+
+    &__title {
+      font: vmin(13)/1 $font-base;
+      padding: vmin(5);
+    }
+  }
+}

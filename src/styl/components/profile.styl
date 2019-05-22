@@ -1,0 +1,78 @@
+.profile-header {
+  background: linear-gradient(to bottom, $pink-soft, $pink-dark);
+  padding: vmin(65) 0 vmin(16);
+  text-align: center;
+
+  &__name {
+    font: bold vmin(31)/1.26 $font-base;
+    text-transform: uppercase;
+  }
+  &__id {
+    opacity: 0.7;
+  }
+  &__circle {
+    margin: vmin(16) auto 0;
+    circle(vmin(192));
+    flexy(center, center);
+    border: vmin(2) dashed currentColor;
+
+    &::before {
+      content: '';
+      display block;
+      absolute(0%, 0%);
+      circle(100%);
+      border: vmin(12) solid rgba($white, 0.4);
+      box-sizing: border-box;
+    }
+  }
+  &__steps {
+    font: vmin(55)/1.24 $font-base;
+  }
+  &__km {
+    font: vmin(17)/1.24 $font-base;
+    opacity: 0.6;
+  }
+  &__actions {
+    flexy(space-between, center);
+  }
+}
+
+.profile-footer {
+  padding: vmin(18) 0;
+  background: $white;
+}
+
+.profile-stats {
+  background: $white;
+
+  &__weekly-inner {
+    flexy(space-between, center);
+    color: $pink-pig;
+    padding: 1em 0;
+  }
+
+  &__graph {
+    background: $white;
+    margin-bottom: vmin(28);
+  }
+
+  &__list {
+    background: $pink;
+    color: $white;
+    padding: vmin(20) 0 vmin(15);
+
+    &-inner {
+      flexy(space-between, flex-start);
+    }
+  }
+  &__item {
+    text-align: center;
+    &-val {
+      font: bold vmin(26)/1.24 $font-base;
+    }
+    &-title {
+      font: vmin(10)/1.2 $font-base;
+      opacity: 0.6;
+    }
+  }
+}

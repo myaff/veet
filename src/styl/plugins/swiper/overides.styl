@@ -1,0 +1,24 @@
+.swiper {
+  &-container {
+    padding-bottom: vmin(54);
+  }
+  &-button-next,
+  &-button-prev {
+    background: rgba($pink-pig, 0.73);
+    circle(vmin(38));
+    color: $white;
+    padding: vmin(8);
+    top: auto;
+    bottom: vmin(8);
+
+    {focus-active} {
+      outline: none;
+    }
+  }
+  &-button-prev {
+    left: 0;
+  }
+  &-button-next {
+    right: 0;
+  }
+}

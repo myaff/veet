@@ -1,0 +1,30 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'profileScores';
+  - var headerTitle = pages.profileScores.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-bg
+      +pic('bird').bird
+    .page-content
+      .l-container
+        .profile-scores
+          .profile-scores__header
+            .profile-scores__img: img(src=profile.img, alt=profile.name)
+            .profile-scores__name.tp-heading--bb !{profile.name}
+            .profile-scores__id.tp-body--medium !{profile.id}
+          .profile-scores__list
+            each item in page.content
+              .profile-scores__item
+                .scores__title.tp-body--medium !{item.title}
+                .scores__val.tp-body--medium-b !{item.val}
+          .profile-scores__total
+            .tp-body--medium-b !{page.total.title + ':&nbsp;'}
+            .tp-body--big !{page.total.val}

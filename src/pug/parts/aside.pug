@@ -1,0 +1,12 @@
+include ../mixins
+.aside.main-menu
+  .aside__inner
+    .aside__profile.mini-profile
+      +pic('crown').crown
+      +pic('heart-2').heart-2
+      +pic('heart-3').heart-3
+      .mini-profile__content
+        .mini-profile__img: img(src=profile.img, alt=profile.name)
+        .mini-profile__name.tp-heading--bb !{profile.name}
+    .aside__nav
+      +nav(nav)

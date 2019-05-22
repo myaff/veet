@@ -1,0 +1,57 @@
+.add-cheque-header {
+  padding: vmin(75) vmin(23) vmin(30);
+  background: linear-gradient(to bottom, $pink, $white);
+  background-size: 100% 100vmax;
+  color: $white;
+}
+
+.add-cheque {
+  &__heading {
+    flexy(space-between, baseline);
+  }
+  &__subheading {
+    margin-top: vmin(5);
+  }
+  &__desc {
+    margin-top: vmin(25);
+  }
+}
+
+.add-cheque-btn {
+  .btn {
+    background: rgba($white, 0.42);
+    padding: vmin(15) vmin(20) vmin(25);
+
+    {active} {
+      background: rgba($white, 0.73);
+    }
+  }
+}
+
+.cheques-list {
+  background: $white;
+  color: $marine;
+
+  &__header {
+    text-align: center;
+    padding: vmin(18) vmin(13) vmin(14);
+    border-bottom: vmin(2) solid $pink;
+  }
+
+  &__item {
+    padding: vmin(24) vmin(14);
+  }
+}
+
+.cheque {
+  &__info,
+  &__state {
+    flexy(space-between, baseline);
+  }
+
+  &__date,
+  &__state-val {
+    flex: 0 0 vmin(130);
+    text-align: center;
+  }
+}

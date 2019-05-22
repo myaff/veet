@@ -1,0 +1,22 @@
+extends template
+
+prepend page
+	- var layout = 'clear';
+	- var currentPage = 'signin';
+	- var pageTitle = false;
+	- var pageDesc = false;
+	- var pageImg = false;
+
+block content
+	.page(class="page--" + currentPage)
+		.page-bg
+			+pic('city').city
+			+pic('cloud').cloud-big
+			+pic('cloud-small').cloud-small
+			+pic('bird').bird
+			+pic('heart').heart
+			.logo
+				+icon('logo').icon--block
+		.page-content
+			.l-container
+				button.btn.btn--white-outline.btn--block.entry-btn !{signin.entry.btn.title}

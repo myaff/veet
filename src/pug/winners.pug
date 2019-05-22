@@ -1,0 +1,37 @@
+extends template
+
+prepend page
+  - var layout = 'tabs';
+  - var currentPage = 'winners';
+  - var headerTitle = pages.winners.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .bage-bg
+      +pic('bird').bird
+    .page-content
+      .tabs.js-tabs
+        .tabs__panel
+          each tab in page.tabs
+            .tab.js-tab(data-tab=`#${tab.id}`)
+              .tab__text.tp-body--medium-b !{tab.title}
+        .tabs__content
+          each tab in page.tabs
+            .tab__content.js-tab-content(id=tab.id)
+              .users
+                each user in users
+                  if user.win === tab.gift
+                    .users__item
+                      .users__circle
+                        if user.img
+                          img(src=user.img, alt=user.name)
+                        else
+                          .name !{user.name}
+                      .users__name.tp-body--big !{user.name}
+                      .users__scores
+                        .tp-body--big !{user.scores.val}
+                        .tp-body--medium !{user.scores.title}

@@ -1,0 +1,57 @@
+.nav {
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  &__item {
+    display: block;
+    padding: 0;
+
+    & + & {
+      margin-top: vmin(4);
+    }
+  }
+  &__link {
+    display: block;
+    padding: vmin(10) 0;
+    color: $pink;
+
+    &.disabled {
+      opacity: 0.6;
+    }
+  }
+}
+
+.btn-menu {
+  size(vmin(30), vmin(17));
+  z-index: 9;
+
+  &::before {
+    content: '';
+    display block
+    fixed(0px, 0px);
+    size(vmin(5), 100vh);
+  }
+
+  div {
+    absolute(0, 0%);
+    size(100%, vmin(3));
+    border-radius: vmin(2);
+    background: currentColor;
+    transition: transform 0.3s;
+    transform-origin: center;
+
+    &:first-child {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      margin-top: vmin(-1.5);
+    }
+    &:last-child {
+      bottom: 0;
+    }
+  }
+}

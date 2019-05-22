@@ -1,0 +1,22 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'rating';
+  - var headerTitle = pages.rating.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-content
+      .users
+        each item in users
+          .users__item
+            .users__circle(class=`size--${item.size}`) !{item.rate}
+            .users__name.tp-body--big !{item.name}
+            .users__scores
+              .tp-body--big !{item.scores.val}
+              .tp-body--medium !{item.scores.title}

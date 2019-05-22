@@ -1,0 +1,20 @@
+extends template
+
+prepend page
+  - var layout = 'default';
+  - var currentPage = 'buy';
+  - var headerTitle = pages.buy.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .page-bg
+      +pic('heart-4').heart-4
+    .page-content
+      .l-container
+        .buy
+          each item in page.content
+            a.buy__btn.btn.btn--primary.btn--block(href=item.url) !{item.title}

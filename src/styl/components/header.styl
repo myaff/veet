@@ -1,0 +1,30 @@
+.header {
+	absolute(0px, 0px);
+	width: 100%;
+	z-index: 9;
+	background: transparent;
+	color: $white;
+	border-bottom vmin(2) solid $white;
+
+	.layout--default &,
+	.layout--tabs & {
+		background: $pink;
+		border-bottom-color: transparent;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	&__content {
+		flexy(flex-start, center);
+		padding: vmin(10) 0;
+	}
+	
+	&__title {
+		font: vmin(22) $font-base;
+		line-height: vmin(23);
+		text-transform: uppercase;
+		margin-left: vmin(10);
+	}
+}

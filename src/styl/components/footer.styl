@@ -1,0 +1,103 @@
+.footer {
+  padding: 45px 0;
+  z-index: 9;
+
+  .layout--home & {
+    absolute(0, 0px, 0px);
+    padding-top: 0;
+  }
+
+  @media $port {
+    padding: 7vw 0;
+  }
+
+  .layout--home & {
+    position: fixed;
+		opacity: 0;
+		transition: opacity 0.5s 1.5s;
+
+		.welcome-done & {
+			opacity: 1;
+		}
+  }
+
+  &__content {
+    flexy(space-between, center);
+  }
+
+  &__age {
+    margin: 0 auto 0 0;
+
+    .fp-viewing-0 & {
+      //margin: 0 0.5rem 0 auto;
+      opacity: 0;
+    }
+
+    .icon {
+      size(20px, 30px);
+    }
+  }
+
+  &__partners {
+    flexy(flex-end, flex-end);
+  }
+
+  &__socials {
+    margin-left: 1.5rem;
+
+    @media $smWidth {
+      display: none;
+    }
+  }
+
+  &__heart {
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &__popup {
+    absolute(0, 0, 90%, 0px);
+    padding-bottom: 1.25rem;
+    transition: transform 0.5s 0.1s, opacity 0.5s 0.1s;
+    transform: translateY(20%);
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    ^[0]__socials:hover & {
+      transform: translateY(0);
+      opacity: 1;
+      z-index: 1;
+      pointer-events: initial;
+    }
+
+    .ya-share2__link {
+      font-size: 1.25rem;
+    }
+
+    .ya-share2__item + .ya-share2__item {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.partner {
+  display: block;
+  margin-left: 0.75rem;
+
+  &__link {
+    display: block;
+
+    &._age{
+      svg{
+        width: 20px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+  }
+}

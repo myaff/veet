@@ -1,0 +1,49 @@
+extends template
+
+prepend page
+  - var layout = 'tabs';
+  - var currentPage = 'products';
+  - var headerTitle = pages.products.title;
+  - var pageTitle = false;
+  - var pageDesc = false;
+  - var pageImg = false;
+
+block content
+  -var page = pages[currentPage];
+  .page(class="page--" + currentPage)
+    .bage-bg
+      +pic('heart-4').heart-4
+    .page-content
+      .tabs.js-tabs
+        .tabs__panel
+          each tab in page.tabs
+            .tab.js-tab(data-tab=`#${tab.id}`)
+              .tab__text.tp-body--medium-b !{tab.title}
+        .tabs__content
+          each tab in page.tabs
+            .tab__content.js-tab-content(id=tab.id)
+              .l-container
+                .products.secondary
+                  each item in tab.content
+                    if item.type === 'img'
+                      .text-img(class=`align--${item.align}`): img(src=item.val, alt=item.alt)
+                    else if item.type === 'heading'
+                      .tp-heading--xs !{item.val}
+                    else if item.type === 'text'
+                      .text: p.tp-body--smaller !{item.val}
+                    else if item.type === 'params'
+                      .params
+                        .params__title.tp-body--smaller !{item.title + ':'}
+                        ul.params__list.tp-body--smaller
+                          each i in item.val
+                            li.params__item !{i}
+                    else if item.type === 'video'
+                      +video(item.url, item.title)
+                    else if item.type === 'product'
+                      .product
+                        .product__img: img(src=item.img, alt=item.title)
+                        .product__info
+                          .product__title.tp-heading--xs !{item.title}
+                          .produuct__desc: p.tp-body--smaller !{item.desc}
+                    else
+                      p.tp-body--smaller !{tab.content}

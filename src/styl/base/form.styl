@@ -1,0 +1,193 @@
+.field {
+  text-align: left;
+  
+  & + & {
+    margin-top: 30px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    font: vmin(16)/1 $font-base;
+    letter-spacing: 0.005em;
+    height: vmin(40);
+    padding: vmin(10) vmin(16) vmin(12);
+    border: vmin(1) solid $grey;
+    border-radius: vmin(5);
+    color: inherit;
+    box-sizing: border-box;
+    box-shadow: none;
+    background: transparent;
+
+    {hover-focus-active} {
+      outline: none;
+    }
+
+    textarea& {
+      min-height: 29px;
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
+
+      @media $display-breakpoints.sm-and-down {
+        
+      }
+    }
+  }
+
+  &__label {
+    relative();
+    display: block;
+  }
+
+  &__label-text {
+    font: vmin(16)/1 $font-base;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: rgba(#011F39, 0.5);
+
+    ^[0]--required &::after {
+      content: '*';
+      margin-left: 0.25em;
+      vertical-align: top;
+      color: $primary;
+    }
+  }
+
+  &__placeholder {
+    font: vmin(16)/1 $font-base;
+    height: vmin(40);
+    padding: vmin(10) vmin(16) vmin(12);
+    absolute(0px, 0px);
+    color: inherit;
+    cursor: text;
+    transition: opacity 0.3s, transform 0.3s;
+
+    ^[0]__input:focus ~ &,
+    ^[0].has-focus &,
+    ^[0].has-value & {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+  }
+}
+
+.flow-textarea {
+  overflow: hidden;
+  resize: none;
+
+  &-example {
+    font: 300 vw(24)/1 $font-base;
+    padding: vw(16) 0;
+    absolute(100%, 0px);
+    width: 100%;
+    z-index: -100;
+    opacity: 0;
+
+    @media $display-breakpoints.sm-and-down {
+      
+    }
+  }
+  &-label {
+    overflow: hidden;
+  }
+}
+
+
+// Radio
+// Checkboxes
+.field {
+  &__label {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      flexy(flex-start, flex-start);
+      cursor: pointer;
+    }
+  }
+  &__box {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      size(14px);
+      flex: 0 0 14px;
+      border: 2px solid currentColor;
+      color: #aaaaaa;
+      transition: all 0.3s;
+      margin-top: 2px;
+      transform: translateZ(0);
+    }
+    ^[0]--radio.is-checked &,
+    ^[0]--checkbox.is-checked & {
+      background: currentColor;
+      color: $primary;
+    }
+    ^[0]--radio & {
+      border-radius: 50%;
+    }
+    ^[0]--checkbox & {
+      border-radius: 3px;
+    }
+  }
+  &__input {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      display: none;
+    }
+  }
+  &__text {
+    ^[0]--radio &,
+    ^[0]--checkbox & {
+      font: 15px/1.33 $font-base;
+      margin-left: 6px;
+      transform: translateZ(0);
+    }
+    ^[0]--radio.is-checked &,
+    ^[0]--checkbox.is-checked & {
+      color: $primary;
+    }
+  }
+}
+
+.fieldset {
+  &--radio {
+    flexy(flex-start, baseline);
+  }
+
+  &--radio &__label {
+    flex: 0 0 auto;
+    transform: translateZ(0);
+  }
+  &--radio &__values {
+    flexy(flex-start, flex-start);
+  }
+}
+
+.field--search {
+  flexy(flex-start, center);
+
+  .field {
+    &__label {
+      flex: 1 1 auto;
+      color: $white;
+    }
+    &__input {
+      background: rgba($pink-pig, 0.42);
+      border-color: transparent;
+    }
+    &__btn {
+      flex: 0 0 vmin(42);
+      margin-left: vmin(9);
+    }
+  }
+}
+
+.filter {
+  padding: vmin(11) vmin(13);
+
+  .btn--square {
+    padding: 0;
+    font-size: vmin(38);
+    size(vmin(42));
+    color: rgba($pink, 0.77);
+  }
+}
