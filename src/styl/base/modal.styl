@@ -55,12 +55,6 @@
   }
 }
 
-.fullsize-popup {
-  display: none;
-  z-index: 9;
-  absolute(0px, 0px);
-  size(100%, 100vh);
-}
 
 .popup {
   absolute(0, vmin(18), vmin(20), vmin(18));
@@ -82,4 +76,12 @@
     size(100%);
     background: rgba($black, 0.2);
   }
+}
+.fullsize-popup {
+  display: none;
+  z-index: 99;
+  absolute(0px, 0px, 0px, 0px);
+  size(100%, 100vh);
+  background: rgba($black, 0.2);
+  transform: none;
 }

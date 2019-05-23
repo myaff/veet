@@ -1,0 +1,5 @@
+include ../mixins
+each item, state in states
+  .popup.fullsize-popup.state-popup(id=`${state}-popup`)
+    .state
+      .state__title.tp-heading--br !{item.title}
