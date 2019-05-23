@@ -30,9 +30,37 @@
           </div>
         </div>
         <div class="page-content">
-          <div class="l-container">
-            <button class="btn btn--white-outline btn--block entry-btn">Войти</button>
+          <div class="l-container"><a class="btn btn--white-outline btn--block entry-btn js-popup js-popup" href="#signin-popup">Войти</a></div>
+        </div>
+      </div>
+      <div class="popup-wrapper">
+        <div class="popup content-popup signin-popup" id="signin-popup">
+          <div class="signin-popup__auth tp-text--center auth">
+            <div class="auth__heading tp-body--base">Выберите способ входа</div>
+            <div class="auth__list"><a class="auth__link auth__link--vk" href="index.html">
+                <svg class="icon icon--block">
+                  <use xlink:href="#vk"></use>
+                </svg></a><a class="auth__link auth__link--fb js-popup" href="#email-popup">
+                <svg class="icon icon--block">
+                  <use xlink:href="#fb"></use>
+                </svg></a>
+            </div>
           </div>
+        </div>
+        <div class="popup content-popup email-popup" id="email-popup">
+          <form class="email-form validated-form">
+            <div class="email-form__title tp-body--base">Ваш контактный email</div>
+            <div class="email-form__fields">
+              <div class="field form__field">
+                <label class="field__label" for="#email">
+                  <input class="field__input" id="#email" type="email" required="required"/>
+                </label>
+              </div>
+            </div>
+            <div class="email-form__btn">
+              <button class="btn btn--primary btn--block btn--small submit-btn" disabled>Отправить</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

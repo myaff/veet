@@ -59,6 +59,10 @@
       border-width: vmin(2, 320);
     }
   }
+  &--small {
+    padding-top: vmin(11);
+    padding-bottom: vmin(12);
+  }
   &--plain {
     size(1em);
     background: transparent;
@@ -109,6 +113,10 @@
   }
   &--primary {
     get-button-variant($pink, $pink-pig);
+
+    &:disabled {
+      background: $pink-pig;
+    }
   }
   &--default-outline {
     get-button-outline-variant($white, $primary);

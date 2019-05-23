@@ -1,0 +1,22 @@
+.auth {
+  &__list {
+    margin-top: vmin(27);
+    flexy(center, center);
+  }
+  &__link {
+    display: block;
+    flex: 0 0 vmin(90);
+    circle(vmin(90));
+    padding: vmin(12);
+    border: vmin(1) solid $grey;
+    margin: 0 vmin(12);
+    box-sizing: border-box;
+
+    &--vk {
+      color: $vk;
+    }
+    &--fb {
+      color: $fb;
+    }
+  }
+}

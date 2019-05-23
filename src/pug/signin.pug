@@ -19,4 +19,20 @@ block content
 				+icon('logo').icon--block
 		.page-content
 			.l-container
-				button.btn.btn--white-outline.btn--block.entry-btn !{signin.entry.btn.title}
+				a.btn.btn--white-outline.btn--block.entry-btn.js-popup(href=signin.entry.btn.target, class=signin.entry.btn.type === 'popup' ? 'js-popup' : '') !{signin.entry.btn.title}
+	.popup-wrapper
+		#signin-popup.popup.content-popup.signin-popup
+			.signin-popup__auth.tp-text--center.auth
+				.auth__heading.tp-body--base !{signin.popup.title}
+				.auth__list
+					for item in signin.popup.vs
+						a.auth__link(href=item.target, class="auth__link--" + item.key, class=item.type === 'popup' ? 'js-popup' : '')
+							+icon(item.icon).icon--block
+		#email-popup.popup.content-popup.email-popup
+			form.email-form.validated-form
+				.email-form__title.tp-body--base !{emailPopup.title}
+				.email-form__fields
+					each item in emailPopup.fields
+						+fieldInput(item.id, item.placeholder, item.label)(type=item.type, required=item.required)
+				.email-form__btn
+					button.btn.btn--primary.btn--block.btn--small.submit-btn(disabled) !{emailPopup.btn.title}

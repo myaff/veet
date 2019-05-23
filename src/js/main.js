@@ -7,6 +7,8 @@ let Carousel = require("./components/carousel");
 //let Statistic = require("./components/statistic");
 let Tabs = require("./components/tabs");
 let Graph = require("./components/graph");
+let Popups = require("./components/popups");
+//let Forms = require("./components/forms");
 
 $(document).ready(function(){
   
@@ -16,6 +18,8 @@ $(document).ready(function(){
   Carousel.init();
   Graph.init();
   Tabs.init();
+  Popups.init();
+  //Forms.init();
   
 });
 
@@ -32,5 +36,7 @@ module.exports = {
   //Share,
   //Animation,
   Graph,
-  Tabs
+  Tabs,
+  Popups,
+  //Forms
 };

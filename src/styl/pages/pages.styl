@@ -5,9 +5,12 @@
   padding-top: vmin(43);
   transition: filter 0.3s;
 
-  .menu-is-open &,
-  .popup-is-open & {
+  .menu-is-open & {
     filter: blur(vmin(5));
+  }
+  .popup-is-open &,
+  .modal-is-open & {
+    filter: blur(vmin(3));
   }
 
   .layout--simple &,

@@ -6,18 +6,14 @@
 function openPopup (id) {
   let popup = $(id);
   if (popup.hasClass('content-popup')) {
+    popup.closest('.popup-wrapper').fadeIn(500);
+    popup.siblings('.popup').removeClass('active');
     popup.addClass('active');
+    $('html').addClass('popup-is-open');
     $('.content-popup-conflict').removeClass('active');
-    if (popup.hasClass('action-popup')){
-      if (Main.DeviceDetection.isMobile()) {
-        $('html, body').animate({'scrollTop': 0}, 500);
-        $('html, body').css('overflow', 'hidden');
-      }
-      $('html').addClass('popup-opened');
-    }
   } else if (popup.hasClass('fullsize-popup')) {
     $('html, body').css('overflow', 'hidden');
-    $('html').addClass('modal-opened');
+    $('html').addClass('modal-is-open');
     popup.fadeIn(500);
   } else {
     openModal(popup);
@@ -26,12 +22,13 @@ function openPopup (id) {
 function closePopup (id) {
   let popup = $(id);
   if (popup.hasClass('content-popup')) {
+    popup.closest('.popup-wrapper').fadeOut(500);
     popup.removeClass('active');
-    $('html').removeClass('popup-opened');
+    $('html').removeClass('popup-is-open');
     $('.content-popup-conflict').addClass('active');
   } else if (popup.hasClass('fullsize-popup')) {
     popup.fadeOut(500);
-    $('html').removeClass('modal-opened');
+    $('html').removeClass('modal-is-open');
   }
   if (Main.DeviceDetection.isMobile()) {
     $('html, body').css('overflow', 'visible');
@@ -49,7 +46,7 @@ function openModal(modal) {
     let win = modal.find('.modal__window');
     modal.fadeIn(500);
     $('html, body').css('overflow', 'hidden');
-    $('html').addClass('modal-opened');
+    $('html').addClass('modal-is-open');
     win.fadeIn(500);
     modal.trigger('modalopened');
   } else {
@@ -62,7 +59,7 @@ function closeModal(modal) {
     let win = modal.find('.modal__window');
     win.fadeOut(500);
     modal.fadeOut(500);
-    $('html').removeClass('modal-opened');
+    $('html').removeClass('modal-is-open');
     if (Main.DeviceDetection.isMobile()) {
       $('html, body').css('overflow', 'visible');
     }
@@ -74,6 +71,10 @@ function closeModal(modal) {
 
 
 function init () {
+
+  if (window.location.hash) {
+    openPopup(window.location.hash);
+  }
 
   $('.js-popup').on('click', function(e) {
     e.preventDefault();

@@ -105,12 +105,14 @@
 				{
 					"icon": "vk",
 					"key": "vk",
-					"success": true
+					"type": "link",
+					"target": "index.html"
 				},
 				{
 					"icon": "fb",
 					"key": "fb",
-					"success": false
+					"target": "#email-popup",
+					"type": "popup"
 				}
 			]
 		}
@@ -529,5 +531,20 @@
 			},
 			"win": "sert"
 		}
-	]
+	],
+	"emailPopup": {
+		"title": "Ваш контактный email",
+		"fields": [
+			{
+				"type": "email",
+				"id": "#email",
+				"placeholder": false,
+				"label": false,
+				"required": true
+			}
+		],
+		"btn": {
+			"title": "Отправить"
+		}
+	}
 }

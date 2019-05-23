@@ -125,39 +125,6 @@ function toggleElementClassOnScroll(el, scrollValue = 0, toggledClass = 'scrolle
 	});
 };
 
-/* Modals */
-function openModal(modal) {
-  if (modal) {
-    let win = modal.find('.modal__window');
-    modal.fadeIn(500);
-    $('html, body').css('overflow-y', 'hidden');
-    win.fadeIn(500);
-    modal.trigger('modalopened');
-  } else {
-    console.error('Which modal?');
-  }
-}
-
-function closeModal(modal) {
-  if (modal) {
-    let win = modal.find('.modal__window');
-    win.fadeOut(500);
-    modal.fadeOut(500);
-    $('html, body').css('overflow-y', '');
-    modal.trigger('modalclosed')
-  } else {
-    console.error('Which modal?');
-  }
-}
-
-function setScrollpad(els) {
-  if ($('.layout').outerHeight() > window.outerHeight) {
-    els.css({'padding-right': getNativeScrollbarWidth() + 'px'});
-  } else {
-    els.css({'padding-right': '0px'});
-  }
-}
-
 /* Menu */
 function showMenu() {
   $('.main-menu').addClass('is-open');
@@ -195,38 +162,12 @@ function init(){
     }
   });
 
-  $('.btn-close-modal').on('click', function(){
-    let modal = !!$(this).data('target') ? $($(this).data('target')) : $(this).closest('.modal');
-    closeModal(modal);
-  });
-
-  $('.modal').on('click', function() {
-    closeModal($(this));
-  });
-
-  $('.modal__window').on('click', function(e) {
-    e.stopPropagation();
-  });
-
-  $('.btn-modal').on('click', function(e) {
-    let target = $(this).data('target') === 'self' ? $(this).parent() : $($(this).data('target'));
-    e.preventDefault();
-    openModal(target);
-  });
-
-  
   $(window).on('resize', function () {
     timer = new Date();
     if (timeout === false) {
       timeout = true;
       setTimeout(resizeEnd, delta);
     }
-  });
-
-  setScrollpad($('.layout, .header'));
-
-  $(window).on('resizeend', function(){
-    setScrollpad($('.layout, .header'));
   });
   
   $('.btn-menu').on('click', function(e){
@@ -247,13 +188,6 @@ function init(){
       hideMenu();
     }
   });
-  $(window).on('resizeend', function(){
-    if (Main.DeviceDetection.isMobile()) {
-      hideMenu();
-    } else {
-      showMenu();
-    }
-  });
 
   if (Main.DeviceDetection.isPortrait()) {
     $('html').addClass('rotated');
@@ -270,12 +204,6 @@ function init(){
     }
   });
 
-  $('.btn-accordion-menu').on('click', function(e) {
-    e.preventDefault();
-    $(this).closest('.multi').toggleClass('open');
-    $(this).siblings('.subnav').slideToggle(500);
-  })
-
   $(window).scroll($.debounce(250, true, function() {
     $('html').addClass('is-scrolling');
   }));
@@ -291,8 +219,6 @@ module.exports = {
   toggleClassIf, 
   toggleElementClassOnScroll, 
   addScript, 
-  openModal, 
-  closeModal,
   showMenu,
   hideMenu
 };
