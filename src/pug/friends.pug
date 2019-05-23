@@ -28,7 +28,7 @@ block content
                 img(src=item.img, alt=item.name)
               else
                 .name !{item.name}
-            .users__name.tp-body--big !{item.name}
+            .users__name(class=item.long ? 'tp-body--medium-b' : 'tp-body--big') !{item.name}
             .users__scores
               .tp-body--big !{item.scores.val}
               .tp-body--medium !{item.scores.title}
